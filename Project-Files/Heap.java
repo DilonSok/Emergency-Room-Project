@@ -25,7 +25,7 @@ public class Heap<T> {
         list.set(second, temp);
     }
 
-
+    
     public void add(T element){
         list.add(element);
 
@@ -37,6 +37,14 @@ public class Heap<T> {
                 break; //end loop if added element is in correct position
             }
         }
+    }
+
+    public ArrayList<T> returnList(){
+        return list;
+    }
+
+    public boolean isEmpty(){
+        return list.isEmpty();
     }
 
     public T remove(){

@@ -3,16 +3,27 @@ import java.time.LocalTime;
 import java.time.Period;
 
 public class Patient {
+    private static int count = 0;
+    private int id;
     private String name;
     private LocalDate DOB;
     public Severity severity;
     public LocalTime arrivalTime;
 
     public Patient(String name, LocalDate DOB, Severity severity, LocalTime arrivalTime){
+        this.id = count++;
         this.name = name;
         this.DOB = DOB;
         this.severity = severity;
         this.arrivalTime = arrivalTime;
+    }
+    public Patient(String name, LocalDate DOB){
+        this.name = name;
+        this.DOB = DOB;
+    }
+
+    public int getId(){
+        return id;
     }
     public int getAge(){
         LocalDate currentDate = LocalDate.now();
